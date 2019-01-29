@@ -1,0 +1,53 @@
+{
+  "name": "intouch-tools",
+  "version": "2.5.0",
+  "description": "playing around with a way to run headless browsers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"I DONT HAVE TIME FOR TEST\" ",
+    "pshell": "node main-Functions/loadShell.js",
+    "setup": "concurrently \"npm:getAlias\" \"npm:installscoop\" \"npm:python\" \"npm:vscode\" \"npm:chromium\" \"npm:node-gyp\"",
+    "getAlias": "npm install --global @gkalpak/aliases",
+    "ghostscript": "scoop install ghostscript",
+    "python": "scoop install python",
+    "vscode": "scoop install vscode",
+    "chromium": "scoop install chromium",
+    "node-gyp": "npm install -g node-gyp",
+    "lint": "eslint main-Functions/"
+  },
+  "author": "P Love",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.1",
+    "await-fs": "^1.0.0",
+    "chromium": "^1.1.1",
+    "colors": "^1.3.2",
+    "convert-excel-to-json": "^1.5.2",
+    "csvjson": "^5.1.0",
+    "csvtojson": "^2.0.8",
+    "dotenv": "^6.2.0",
+    "filehound": "^1.16.4",
+    "fs-extra": "^7.0.1",
+    "html-to-text": "^4.0.0",
+    "iconv-lite": "^0.4.24",
+    "jimp": "^0.5.6",
+    "lodash": "^4.17.11",
+    "node-powershell": "^3.3.1",
+    "pdf-toolz": "github:plovemk/pdf-toolz",
+    "pdf2json": "^1.1.7",
+    "powershell": "^2.3.0",
+    "puppeteer": "^1.11.0",
+    "puppeteer-core": "^1.11.0",
+    "replace-in-file": "^3.4.2",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "sharp": "^0.20.8",
+    "standard": "*",
+    "textract": "^2.4.0",
+    "utf8": "^3.0.0",
+    "xlsx": "^0.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-config-google": "^0.11.0"
+  }
+}

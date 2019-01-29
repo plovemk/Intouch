@@ -1,0 +1,8 @@
+node_modules
+.npmrc
+.env
+parseWord.js
+.env
+recent-jobs/
+work-flow/
+email-Body/
