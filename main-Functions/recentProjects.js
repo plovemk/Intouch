@@ -1,6 +1,6 @@
-var async = require('async');
-var fs = require('fs');
-var os = require('os');
+// var async = require("async");
+var fs = require("fs");
+var os = require("os");
 var jFile = `C:/Users/${os.userInfo().username}/Intouch/intouch-tools/main-Functions/recent-jobs/jobs.json`;
 var jobId = process.argv[2];
 var jobName = process.argv[3];
@@ -11,53 +11,53 @@ var fileContents;
 var ff;
 var jobsSeed = new Object({
   recentDir: []
-})
+});
 var projectObject = new Object({
   id: jobId,
   name: jobName,
   path: jobPath,
   jobType: jobType,
   date: date.toJSON(),
-})
+});
 
 async function existCheck() {
-   ff = fs.existsSync(jFile)
+  ff = fs.existsSync(jFile);
   if(ff){
-    pushParse()
+    pushParse();
   } else {
-    await fs.writeFileSync(jFile, JSON.stringify(jobsSeed))
-    await pushParse()
+    await fs.writeFileSync(jFile, JSON.stringify(jobsSeed));
+    await pushParse();
   }
 }
 
 async function pushParse() {
-  await readFile()
-  await parsePushContents()
-  await writeFile()
+  await readFile();
+  await parsePushContents();
+  await writeFile();
 }
 
- function pushtoList(){
-    try {
-      let newObj = fs.appendFileSync(jFile, JSON.stringify(projectObject))
-      console.log('file was appended')
-    } catch (err){
-      console.log(err)
-    }
-}
+//  function pushtoList(){
+//     try {
+//       let newObj = fs.appendFileSync(jFile, JSON.stringify(projectObject))
+//       console.log("file was appended")
+//     } catch (err){
+//       console.log(err)
+//     }
+// }
 function readFile(){
-   fileContents = fs.readFileSync(jFile, {encoding: 'utf8'})
-  return fileContents
+  fileContents = fs.readFileSync(jFile, {encoding: "utf8"});
+  return fileContents;
 }
 function parsePushContents(){
   fileContents = JSON.parse(fileContents);
-  fileContents['recentDir'].push(projectObject)
-  console.log(`type of file contents ${JSON.stringify(fileContents)}`)
+  fileContents["recentDir"].push(projectObject);
+  console.log(`type of file contents ${JSON.stringify(fileContents)}`);
 }
 function writeFile() {
-    fs.writeFileSync(jFile, JSON.stringify(fileContents))
+  fs.writeFileSync(jFile, JSON.stringify(fileContents));
 }
 
-existCheck()
+existCheck();
 
 
 //--------------Email--------------

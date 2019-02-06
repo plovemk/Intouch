@@ -4,5 +4,8 @@ node_modules
 parseWord.js
 .env
 recent-jobs/
-work-flow/
 email-Body/
+work-flow/
+most-recent.json
+temp-2019.csv
+tempName.json
