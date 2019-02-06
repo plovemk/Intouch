@@ -5,7 +5,4 @@ parseWord.js
 .env
 recent-jobs/
 email-Body/
-work-flow/
-most-recent.json
-temp-2019.csv
-tempName.json
+work-flow
