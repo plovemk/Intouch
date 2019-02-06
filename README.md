@@ -4,16 +4,20 @@
 # Intouch Tools Setup and Documentation
 ***
 # Set Up
-1. Make a new directory in `C:/Users/Username*/` and name the folder `Intouch`.   
+1. Install Scoop https://scoop.sh/ - Inside Powershell run this command to install scoop
+
+      `iex (new-object net.webclient).downloadstring('https://get.scoop.sh')`
+
+2. Make a new directory in `C:/Users/Username*/` and name the folder `Intouch`.   
       -cd into the new Intouch folder and clone the repo https://github.com/plovemk/Intouch.git.    
       `git clone https://github.com/plovemk/Intouch.git`
 
-2. Map the networked intouch folder to your computer `\\SERVERNAME\US_CS_Web\InTouch`   
+3. Map the networked intouch folder to your computer `\\SERVERNAME\US_CS_Web\InTouch`   
     Call this new mapped drive "`Z`".   
     https://support.microsoft.com/en-us/help/4026635/windows-map-a-network-drive
 
 
-3. Create a .npmrc file in the root directory and put the next two lines of code in there to set ENV variables.
+4. Create a .npmrc file in the root directory and put the next two lines of code in there to set ENV variables.
 
   \**This will skip puppeteer from downloading chromium. The version of chromium in Puppeteer is incompatible with windows. A working version of Chromium will be installed separately in a node package.*
 
@@ -23,27 +27,26 @@
 
 
 
-4. Install Alias (skip this if you don't want this.) https://www.npmjs.com/package/@gkalpak/aliases   
+5. Install Alias (skip this if you don't want this.) https://www.npmjs.com/package/@gkalpak/aliases   
 `npm run getAlias`   
     ###### After Alias is installed:    
     Run `halp` for a list of all available aliases. Run `halp <category>` for a list of available aliases for a particular category (e.g. git, node, misc).
 
-5.  Install dependencies   
+6.  Install dependencies   
   `npm install` or if you did step 2 --> `nad`
 
-6. Load the powershell files into the powershell directory.    
+7. Load the powershell files into the powershell directory.    
   `npm run pshell`  
   If you did step 2 -->  `nr pshell`    
-7. Install Scoop https://scoop.sh/ - Inside Powershell run this command to install scoop
 
-      `iex (new-object net.webclient).downloadstring('https://get.scoop.sh')`
 
 8. Install concurrently `npm install -g concurrently`
 9. Run the Script to setup global dependencies and Scoop packages
 
       `nr setup`
-
-10. Everything is ready. Read below to see available functions.
+11. Set up environment variables at the root of this project in a .env file - scroll down to bottom of the page.
+12. Set up environment variables in PowerShell - scroll down to bottom of the page.
+12. Everything is ready. Read below to see available functions.
 
 
 ***
