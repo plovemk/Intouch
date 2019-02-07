@@ -4,20 +4,25 @@
 # Intouch Tools Setup and Documentation
 ***
 # Set Up
-0. Install Scoop https://scoop.sh/ - Inside Powershell run this command to install scoop
+1. Install Scoop https://scoop.sh/ - Inside Powershell run this command to install scoop
 
       `iex (new-object net.webclient).downloadstring('https://get.scoop.sh')`
-1. Execute this command in Powershell `Scoop install git`
+2. Execute this command in Powershell `Scoop install git`
+3. Execute this command in PowerShell `Scoop install cygwin`
+4. in PowerShell `Scoop bucket add extras`
+5. in PowerShell `Scoop install atom`
+6. in PowerShell `Scoop install nodejs`
+<!-- 5. in PowerShell `Scoop install python` -->
 <!-- 2. Make a new directory in `C:/Users/Username*/` and name the folder `Intouch`.   
       -cd into the new Intouch folder and clone the repo https://github.com/plovemk/Intouch.git.     -->
-2. Execute this command in PowerShell`git clone https://github.com/plovemk/Intouch.git`
+7. Execute this command in PowerShell`git clone https://github.com/plovemk/Intouch.git`
 
-3. Map the networked intouch folder to your computer `\\SERVERNAME\US_CS_Web\InTouch`   
+8. Map the networked intouch folder to your computer `\\SERVERNAME\US_CS_Web\InTouch`   
     Call this new mapped drive "`Z`".   
     https://support.microsoft.com/en-us/help/4026635/windows-map-a-network-drive
+9. Exe
 
-
-4. Create a .npmrc file in the root directory and put the next two lines of code in there to set ENV variables.
+10. Create a .npmrc file in the root directory and put the next two lines of code in there to set ENV variables.
 
   \**This will skip puppeteer from downloading chromium. The version of chromium in Puppeteer is incompatible with windows. A working version of Chromium will be installed separately in a node package.*
 
@@ -27,26 +32,26 @@
 
 
 
-5. Install Alias (skip this if you don't want this.) https://www.npmjs.com/package/@gkalpak/aliases   
+11. Install Alias (skip this if you don't want this.) https://www.npmjs.com/package/@gkalpak/aliases   
 `npm run getAlias`   
     ###### After Alias is installed:    
     Run `halp` for a list of all available aliases. Run `halp <category>` for a list of available aliases for a particular category (e.g. git, node, misc).
 
-6.  Install dependencies   
+12.  Install dependencies   
   `npm install` or if you did step 2 --> `nad`
 
-7. Load the powershell files into the powershell directory.    
+13. Load the powershell files into the powershell directory.    
   `npm run pshell`  
   If you did step 2 -->  `nr pshell`    
 
 
-8. Install concurrently `npm install -g concurrently`
-9. Run the Script to setup global dependencies and Scoop packages
+14. Install concurrently `npm install -g concurrently`
+15. Run the Script to setup global dependencies and Scoop packages
 
       `nr setup`
-10. Set up environment variables at the root of this project in a .env file - scroll down to bottom of the page.
-11. Set up environment variables in PowerShell - scroll down to bottom of the page.
-12. Everything is ready. Read below to see available functions.
+16. Set up environment variables at the root of this project in a .env file - scroll down to bottom of the page.
+17. Set up environment variables in PowerShell - scroll down to bottom of the page.
+18. Everything is ready. Read below to see available functions.
 
 
 ***
@@ -132,7 +137,6 @@ INTOUCH_SERVE, INTOUCH_BASE, MAIL_SERVE
   1. Create a .env file in the project root
   2.  Copy and paste the block of code into your .env file.
   3. You will have to ask for the values.
-> PARSE_FILE =  
->  TOOLS_PATH =  
+
 >  APRIMO_REPORT =  
 >  INTOUCH_SERV =

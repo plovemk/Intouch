@@ -7,7 +7,7 @@ Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\G
 Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\ConvertTo-PDF.ps1
 Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\Find-JobsPath.ps1
 Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\Get-ReleaseJob.ps1
-Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\New-Email.ps1
+# Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\New-Email.ps1
 # Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\Get-Notes.ps1
 # Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\ConvertTo-SinglePDF.ps1
 
