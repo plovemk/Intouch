@@ -7,51 +7,53 @@
 1. Install Scoop https://scoop.sh/ - Inside Powershell run this command to install scoop
 
       `iex (new-object net.webclient).downloadstring('https://get.scoop.sh')`
-2. Execute this command in Powershell `Scoop install git`
-3. Execute this command in PowerShell `Scoop install cygwin`
-4. in PowerShell `Scoop bucket add extras`
-5. in PowerShell `Scoop install atom`
-6. in PowerShell `Scoop install nodejs`
-<!-- 5. in PowerShell `Scoop install python` -->
-<!-- 2. Make a new directory in `C:/Users/Username*/` and name the folder `Intouch`.   
-      -cd into the new Intouch folder and clone the repo https://github.com/plovemk/Intouch.git.     -->
-7. Execute this command in PowerShell`git clone https://github.com/plovemk/Intouch.git`
-
-8. Map the networked intouch folder to your computer `\\SERVERNAME\US_CS_Web\InTouch`   
+2.  Map the networked intouch folder to your computer `\\SERVERNAME\US_CS_Web\InTouch`   
     Call this new mapped drive "`Z`".   
     https://support.microsoft.com/en-us/help/4026635/windows-map-a-network-drive
-9. Exe
 
-10. Create a .npmrc file in the root directory and put the next two lines of code in there to set ENV variables.
+# Install Dev Tools
+  1. Copy and execute this command in Powershell
+
+  `Scoop install git; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git`
+<!-- 7. In PowerShell`git clone https://github.com/plovemk/Intouch.git` -->
+
+
+
+2. Create a .npmrc file in the root directory of Intouch and put the next two lines of code in there to set ENV variables.
 
   \**This will skip puppeteer from downloading chromium. The version of chromium in Puppeteer is incompatible with windows. A working version of Chromium will be installed separately in a node package.*
 
-        `puppeteer_skip_chromium_download=true  `   
-        `PUPPETEER_CHROMIUM_REVISION=1.0.2`
 
+        puppeteer_skip_chromium_download=true    
+        PUPPETEER_CHROMIUM_REVISION=1.0.2
 
+# Install Dependencies
 
+    `npm run getAlias; nad; nr pshell; npm install -g concurrently; nr setup`
 
-11. Install Alias (skip this if you don't want this.) https://www.npmjs.com/package/@gkalpak/aliases   
+#### Steps 1 - 5 are the same as the line above.
+1. Install Alias (skip this if you don't want this.) https://www.npmjs.com/package/@gkalpak/aliases   
 `npm run getAlias`   
     ###### After Alias is installed:    
     Run `halp` for a list of all available aliases. Run `halp <category>` for a list of available aliases for a particular category (e.g. git, node, misc).
 
-12.  Install dependencies   
+2.  Install dependencies   
   `npm install` or if you did step 2 --> `nad`
 
-13. Load the powershell files into the powershell directory.    
+3. Load the powershell files into the powershell directory.    
   `npm run pshell`  
   If you did step 2 -->  `nr pshell`    
 
 
-14. Install concurrently `npm install -g concurrently`
-15. Run the Script to setup global dependencies and Scoop packages
+4. Install concurrently `npm install -g concurrently`
+5. Run the Script to setup global dependencies and Scoop packages
 
       `nr setup`
-16. Set up environment variables at the root of this project in a .env file - scroll down to bottom of the page.
-17. Set up environment variables in PowerShell - scroll down to bottom of the page.
-18. Everything is ready. Read below to see available functions.
+
+# [Set remaining Environment Variables](#env)
+1. Set up environment variables at the root of this project in a .env file - scroll down to bottom of the page.
+2. Set up environment variables in PowerShell - scroll down to bottom of the page.
+3. Everything is ready. Read below to see available functions.
 
 
 ***
@@ -123,7 +125,7 @@ Run this script if errors are being thrown when running npm install
     `Set-Alias newName functionName`  
     example: `Set-Alias images makeImages`   
 
-### ENVIRONMENT VARIABLES FOR PowerShell
+### ENVIRONMENT VARIABLES FOR PowerShell<a name="env"></a>
 INTOUCH_SERV, INTOUCH_BASE, MAIL_SERV
   1. Run this command with a variable from above as a string and the values given to you
   2. You may have to run the command twice - once with User as the option and Process
