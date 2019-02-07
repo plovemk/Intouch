@@ -124,7 +124,7 @@ Run this script if errors are being thrown when running npm install
     example: `Set-Alias images makeImages`   
 
 ### ENVIRONMENT VARIABLES FOR PowerShell
-INTOUCH_SERVE, INTOUCH_BASE, MAIL_SERVE
+INTOUCH_SERV, INTOUCH_BASE, MAIL_SERV
   1. Run this command with a variable from above as a string and the values given to you
   2. You may have to run the command twice - once with User as the option and Process
   > [Environment]::SetEnvironmentVariable("VAR_NAME", "value", "User")
