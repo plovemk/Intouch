@@ -1,7 +1,7 @@
 // var async = require("async");
 var fs = require("fs");
 var os = require("os");
-var jFile = `C:/Users/${os.userInfo().username}/Intouch/main-Functions/recent-jobs/jobs.json`;
+var jFile = `C:/Users/${os.userInfo().username}/Intouch/main-Functions/data/jobs.json`;
 var jobId = process.argv[2];
 var jobName = process.argv[3];
 var jobType = process.argv[4];
