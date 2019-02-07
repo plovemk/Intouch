@@ -6,7 +6,7 @@ const WebEmail = `C:\\Users\\${os.userInfo().username}\\Documents\\WindowsPowerS
 // const async = require("async");
 const fs = require("fs");
 const colors = require("colors");
-const jFile = `C:/Users/${os.userInfo().username}/Intouch/intouch-tools/main-Functions/recent-jobs/jobs.json`;
+const jFile = `C:/Users/${os.userInfo().username}/Intouch/main-Functions/recent-jobs/jobs.json`;
 const searchQ = process.argv[2];
 let fileContents;
 let matches = [];

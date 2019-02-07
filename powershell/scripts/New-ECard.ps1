@@ -122,7 +122,7 @@ function newCard([String]$newCardPath) {
   function pushtoRecentList() {
     # echo "is this even being called? $projectNumber $projectName"
     $pPath = Get-Location
-    node "C:\Users\$env:Username\Intouch\intouch-tools\main-Functions\recentProjects.js" $projectNumber $projectName "ecard" $pPath
+    node "C:\Users\$env:Username\Intouch\main-Functions\recentProjects.js" $projectNumber $projectName "ecard" $pPath
   }
   # pushtoRecentList
   function spawnDir() {

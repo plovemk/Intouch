@@ -67,7 +67,7 @@ $Color = @{
     function pushtoRecentList() {
       # echo "is this even being called? $projectNumber $projectName"
       $pPath = Get-Location
-      node "C:\Users\$env:Username\Intouch\intouch-tools\main-Functions\recentProjects.js" $projectNumber $projectName "webpage" $pPath
+      node "C:\Users\$env:Username\Intouch\main-Functions\recentProjects.js" $projectNumber $projectName "webpage" $pPath
     }
 
   $pageName = Read-Host '

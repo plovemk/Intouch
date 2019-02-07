@@ -16,7 +16,7 @@ function missingLinks([String]$filePath) {
     # cd 'Release folder'
     Write-Host ' html '  $path
   }
-    node "C:\Users\$env:Username\Intouch\intouch-tools\main-Functions\missingLinks.js" $filePath
+    node "C:\Users\$env:Username\Intouch\main-Functions\missingLinks.js" $filePath
 
     <#
     .Synopsis

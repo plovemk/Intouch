@@ -1,6 +1,6 @@
 function searchJobs([string]$query, [string]$depth){
 
-  node "C:\Users\$env:Username\Intouch\intouch-tools\main-Functions\search.js" $query $depth
+  node "C:\Users\$env:Username\Intouch\main-Functions\search.js" $query $depth
   <#
   .Synopsis
   This is a search engine for the server with all of the jobs.

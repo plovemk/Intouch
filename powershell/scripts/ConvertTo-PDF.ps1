@@ -3,7 +3,7 @@ function makeBoards([string]$filePath, [string]$lang,[string]$version){
   $path = $filePath.Replace("$env:INTOUCH_SERV\","Z:\")
   function callNode($uniPath, $lang){
 
-    node "C:\Users\$env:Username\Intouch\intouch-tools\main-Functions\pdf.js" $uniPath $lang $version
+    node "C:\Users\$env:Username\Intouch\main-Functions\pdf.js" $uniPath $lang $version
   }
   if($path.contains('HTML')){
     Write-Host ' html '  $path

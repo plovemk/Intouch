@@ -1,5 +1,5 @@
 function releaseJob([string]$job){
-  node "C:\Users\$env:Username\Intouch\intouch-tools\main-Functions\email.js" $job
+  node "C:\Users\$env:Username\Intouch\main-Functions\email.js" $job
   <#
   .Synopsis
   This will create a draft of the release email

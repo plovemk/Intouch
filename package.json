@@ -1,5 +1,5 @@
 {
-  "name": "intouch-tools",
+  "name": "intouch",
   "version": "2.5.0",
   "description": "playing around with a way to run headless browsers",
   "main": "index.js",

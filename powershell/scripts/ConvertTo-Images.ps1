@@ -25,7 +25,7 @@ function makeImages([String]$filePath) {
     Write-Host ' html '  $path
   }
 
-  node "C:\Users\$env:Username\Intouch\intouch-tools\main-Functions\resize.js" $finalPath
+  node "C:\Users\$env:Username\Intouch\main-Functions\resize.js" $finalPath
 
   <#
   .Synopsis

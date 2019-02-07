@@ -4,13 +4,13 @@
 # Intouch Tools Setup and Documentation
 ***
 # Set Up
-1. Install Scoop https://scoop.sh/ - Inside Powershell run this command to install scoop
+0. Install Scoop https://scoop.sh/ - Inside Powershell run this command to install scoop
 
       `iex (new-object net.webclient).downloadstring('https://get.scoop.sh')`
-
-2. Make a new directory in `C:/Users/Username*/` and name the folder `Intouch`.   
-      -cd into the new Intouch folder and clone the repo https://github.com/plovemk/Intouch.git.    
-      `git clone https://github.com/plovemk/Intouch.git`
+1. Execute this command in Powershell `Scoop install git`
+<!-- 2. Make a new directory in `C:/Users/Username*/` and name the folder `Intouch`.   
+      -cd into the new Intouch folder and clone the repo https://github.com/plovemk/Intouch.git.     -->
+2. Execute this command in PowerShell`git clone https://github.com/plovemk/Intouch.git`
 
 3. Map the networked intouch folder to your computer `\\SERVERNAME\US_CS_Web\InTouch`   
     Call this new mapped drive "`Z`".   
@@ -44,8 +44,8 @@
 9. Run the Script to setup global dependencies and Scoop packages
 
       `nr setup`
-11. Set up environment variables at the root of this project in a .env file - scroll down to bottom of the page.
-12. Set up environment variables in PowerShell - scroll down to bottom of the page.
+10. Set up environment variables at the root of this project in a .env file - scroll down to bottom of the page.
+11. Set up environment variables in PowerShell - scroll down to bottom of the page.
 12. Everything is ready. Read below to see available functions.
 
 
