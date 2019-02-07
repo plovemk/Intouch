@@ -7,7 +7,8 @@ const csvjson = require("csvjson");
 const iconv = require("iconv-lite");
 const utf8 = require("utf8");
 const _ = require("lodash");
-// const path = require("path");
+
+
 var today = new Date();
 today = today.toISOString();
 today = Date.parse(today);
@@ -119,7 +120,6 @@ function formatObjects(dev, today, jPath) {
   }
 }
 
-//stuck on taking json file and fixing the string.
 
 const runAsyncFunc = async (name, dev) => {
   await copyData(name, dev);

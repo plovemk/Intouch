@@ -13,10 +13,11 @@ let tempPath;
 let birthdate;
 let fileObject;
 
+
 const devsArray = [
-  {winName: "Love", nameIn: "Love, Paul", nameOut: "Paul Love"}
-  // {winName: "Freelancer - McGee", nameIn: "McGee, Kayla", nameOut: "Kayla McGee"},
-  // {winName: "Freelancer - Nipper", nameIn: "Nipper, Riley" , nameOut: "Riley Nipper"}
+  {winName: "Love", nameIn: "Love, Paul", nameOut: "Paul Love"},
+  {winName: "Freelancer - McGee", nameIn: "McGee, Kayla", nameOut: "Kayla McGee"},
+  {winName: "Freelancer - Nipper", nameIn: "Nipper, Riley" , nameOut: "Riley Nipper"}
 ];
 function runChromium() {
 
