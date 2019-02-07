@@ -14,7 +14,8 @@
 # Install Dev Tools
   1. Copy and execute this command in Powershell
 
-  `Scoop install git; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git`
+
+        Scoop install git; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git
 <!-- 7. In PowerShell`git clone https://github.com/plovemk/Intouch.git` -->
 
 
@@ -29,7 +30,7 @@
 
 # Install Dependencies
 
-    `npm run getAlias; nad; nr pshell; npm install -g concurrently; nr setup`
+      npm run getAlias; nad; nr pshell; npm install -g concurrently; nr setup
 
 #### Steps 1 - 5 are the same as the line above.
 1. Install Alias (skip this if you don't want this.) https://www.npmjs.com/package/@gkalpak/aliases   
