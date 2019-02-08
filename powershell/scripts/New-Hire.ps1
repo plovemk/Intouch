@@ -1,7 +1,7 @@
 
 
 function onboard {
-    setLocal; getScoop; install git; npm config set strict-ssl false; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git; changDir; setPuppeteer; createEnvFile; lastStep; message; setBaseEnv; setServEnv
+    setLocal; getScoop; Scoop install git; npm config set strict-ssl false; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git; changDir; setPuppeteer; createEnvFile; lastStep; message; setBaseEnv; setServEnv
   }
 function setLocal {
   cd '~'
