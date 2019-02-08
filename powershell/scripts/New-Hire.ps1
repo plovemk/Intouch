@@ -1,5 +1,5 @@
 function onboard {
-    Scoop install git; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git; changDir; setPuppeteer; createEnvFile; lastStep; message
+    Scoop install git; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git; changDir; setPuppeteer; createEnvFile; lastStep; message; setBaseEnv; setServEnv
 }
 
 function setPuppeteer {
@@ -17,6 +17,35 @@ function message {
 }
 function changDir {
     cd '.\Intouch\'
+}
+
+function setBaseEnv {
+  $baseName = Read-Host '
+  ------------------------------------------------
+  What is the base variable Name?
+  ------------------------------------------------
+  '
+  $baseValue = Read-Host'
+  ------------------------------------------------
+  What is the base variable Value?
+  ------------------------------------------------
+  '
+  [Environment]::SetEnvironmentVariable("$baseName", "$baseValue", "User"); [Environment]::SetEnvironmentVariable("$baseName", "$baseValue", "Process")
+}
+
+function setServEnv {
+  $servName = Read-Host '
+  ------------------------------------------------
+  What is the server variable Name ?
+  ------------------------------------------------
+  '
+
+  $servValue = Read-Host'
+  ------------------------------------------------
+  What is the server variable Value?
+  ------------------------------------------------
+  '
+  [Environment]::SetEnvironmentVariable("$servName", "$servValue", "User"); [Environment]::SetEnvironmentVariable("$servName", "$servValue", "Process")
 }
 
 
