@@ -20,7 +20,10 @@ What is the server variable Value?
 ------------------------------------------------
 '
 function onboard {
-    getScoop; install git; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git; changDir; setPuppeteer; createEnvFile; lastStep; message; createNetworkDrive; setBaseEnv; setServEnv
+    setLocal; getScoop; install git; npm config set strict-ssl false; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git; changDir; setPuppeteer; createEnvFile; lastStep; message; createNetworkDrive; setBaseEnv; setServEnv
+}
+function setLocal {
+  cd '~'
 }
 function getScoop {
   iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
@@ -55,6 +58,5 @@ function setServEnv {
   [Environment]::SetEnvironmentVariable("$servName", "$servValue", "User"); [Environment]::SetEnvironmentVariable("$servName", "$servValue", "Process")
   Write-Host "Environment variable for $servName set" -Fore "Green"
 }
-
 
 onboard
