@@ -7,16 +7,16 @@
 1. Install Scoop https://scoop.sh/ - Inside Powershell run this command to install scoop
 
       `iex (new-object net.webclient).downloadstring('https://get.scoop.sh')`
-2.  Map the networked intouch folder to your computer `\\SERVERNAME\US_CS_Web\InTouch`   
+<!-- 2.  Map the networked intouch folder to your computer `\\SERVERNAME\US_CS_Web\InTouch`   
     Call this new mapped drive "`Z`".   
-    https://support.microsoft.com/en-us/help/4026635/windows-map-a-network-drive
-3. #### Run the following command to Skip the next 2 sections
+    https://support.microsoft.com/en-us/help/4026635/windows-map-a-network-drive -->
+2.  Run the following command to Install Dev Tools and Project Dependencies.
 
 ```
       iex (new-object net.webclient).downloadstring('https://raw.githubusercontent.com/plovemk/Intouch/master/powershell/scripts/New-Hire.ps1')
 ```
 
-
+<!--
 # Install Dev Tools
 1. Copy and execute this command in Powershell
 
@@ -42,17 +42,17 @@
     Run `halp` for a list of all available aliases. Run `halp <category>` for a list of available aliases for a particular category (e.g. git, node, misc).
 
 2.  Install dependencies   
-  `npm install` or if you did step 2 --> `nad`
+  `npm install` or if you did step 2 `nad` -->
 
-3. Load the powershell files into the powershell directory.    
+<!-- 3. Load the powershell files into the powershell directory.    
   `npm run pshell`  
-  If you did step 2 -->  `nr pshell`    
+  If you did step 2   `nr pshell`    
 
 
 4. Install concurrently `npm install -g concurrently`
 5. Run the Script to setup global dependencies and Scoop packages
 
-      `nr setup`
+      `nr setup`  -->
 
 # [Set remaining Environment Variables](#env)
 1. Set up environment variables at the root of this project in a .env file - scroll down to bottom of the page.
@@ -130,6 +130,7 @@ Run this script if errors are being thrown when running npm install
     example: `Set-Alias images makeImages`   
 
 ### ENVIRONMENT VARIABLES FOR PowerShell<a name="env"></a>
+##### *This step is now handled in the install script*
 INTOUCH_SERV, INTOUCH_BASE, MAIL_SERV
   1. Run this command with a variable from above as a string and the values given to you
   2. You may have to run the command twice - once with User as the option and Process
@@ -140,9 +141,9 @@ INTOUCH_SERV, INTOUCH_BASE, MAIL_SERV
     > Get-ChildItem Env:
 
 ### ENVIRONMENT variables for this App.
-  1. Create a .env file in the project root
+  1. Create a .env file in the project root - *This step is now handled in the install script*
   2.  Copy and paste the block of code into your .env file.
-  3. You will have to ask for the values.
+  3. Values will be provided.
 
 >  APRIMO_REPORT =  
 >  INTOUCH_SERV =
