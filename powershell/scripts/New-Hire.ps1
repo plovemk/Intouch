@@ -3,7 +3,7 @@ $baseName = Read-Host '
 What is the base variable Name?
 ------------------------------------------------
 '
-$baseValue = Read-Host'
+$baseValue = Read-Host '
 ------------------------------------------------
 What is the base variable Value?
 ------------------------------------------------
@@ -14,7 +14,7 @@ What is the server variable Name ?
 ------------------------------------------------
 '
 
-$servValue = Read-Host'
+$servValue = Read-Host '
 ------------------------------------------------
 What is the server variable Value?
 ------------------------------------------------
