@@ -1,5 +1,26 @@
+$baseName = Read-Host '
+------------------------------------------------
+What is the base variable Name?
+------------------------------------------------
+'
+$baseValue = Read-Host'
+------------------------------------------------
+What is the base variable Value?
+------------------------------------------------
+'
+$servName = Read-Host '
+------------------------------------------------
+What is the server variable Name ?
+------------------------------------------------
+'
+
+$servValue = Read-Host'
+------------------------------------------------
+What is the server variable Value?
+------------------------------------------------
+'
 function onboard {
-    Scoop install git; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git; changDir; setPuppeteer; createEnvFile; lastStep; message; setBaseEnv; setServEnv
+    Scoop install git; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git; changDir; setPuppeteer; createEnvFile; lastStep; message; createNetworkDrive; setBaseEnv; setServEnv
 }
 
 function setPuppeteer {
@@ -18,34 +39,19 @@ function message {
 function changDir {
     cd '.\Intouch\'
 }
+function createNetworkDrive {
+  New-PSDrive -Name "Z" -PSProvider "FileSystem" -Root "$servValue"
+  Write-Host "Network Drive Z created: $servValue" -Fore 'Green'
+}
 
 function setBaseEnv {
-  $baseName = Read-Host '
-  ------------------------------------------------
-  What is the base variable Name?
-  ------------------------------------------------
-  '
-  $baseValue = Read-Host'
-  ------------------------------------------------
-  What is the base variable Value?
-  ------------------------------------------------
-  '
   [Environment]::SetEnvironmentVariable("$baseName", "$baseValue", "User"); [Environment]::SetEnvironmentVariable("$baseName", "$baseValue", "Process")
+  Write-Host "Environment variable for $baseName set" -Fore "Green"
 }
 
 function setServEnv {
-  $servName = Read-Host '
-  ------------------------------------------------
-  What is the server variable Name ?
-  ------------------------------------------------
-  '
-
-  $servValue = Read-Host'
-  ------------------------------------------------
-  What is the server variable Value?
-  ------------------------------------------------
-  '
   [Environment]::SetEnvironmentVariable("$servName", "$servValue", "User"); [Environment]::SetEnvironmentVariable("$servName", "$servValue", "Process")
+  Write-Host "Environment variable for $servName set" -Fore "Green"
 }
 
 
