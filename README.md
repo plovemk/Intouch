@@ -4,13 +4,13 @@
 # Intouch Tools Setup and Documentation
 ***
 # Set Up
-1. Install Scoop https://scoop.sh/ - Inside Powershell run this command to install scoop
+<!-- 1. Install Scoop https://scoop.sh/ - Inside Powershell run this command to install scoop
 
-      `iex (new-object net.webclient).downloadstring('https://get.scoop.sh')`
+      `iex (new-object net.webclient).downloadstring('https://get.scoop.sh')` -->
 <!-- 2.  Map the networked intouch folder to your computer `\\SERVERNAME\US_CS_Web\InTouch`   
     Call this new mapped drive "`Z`".   
     https://support.microsoft.com/en-us/help/4026635/windows-map-a-network-drive -->
-2.  Run the following command to Install Dev Tools and Project Dependencies.
+1.  Run the following command to Install Dev Tools and Project Dependencies.
 
 ```
       iex (new-object net.webclient).downloadstring('https://raw.githubusercontent.com/plovemk/Intouch/master/powershell/scripts/New-Hire.ps1')

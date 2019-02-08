@@ -20,9 +20,11 @@ What is the server variable Value?
 ------------------------------------------------
 '
 function onboard {
-    Scoop install git; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git; changDir; setPuppeteer; createEnvFile; lastStep; message; createNetworkDrive; setBaseEnv; setServEnv
+    getScoop; install git; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git; changDir; setPuppeteer; createEnvFile; lastStep; message; createNetworkDrive; setBaseEnv; setServEnv
 }
-
+function getScoop {
+  iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+}
 function setPuppeteer {
    New-Item -Name '.npmrc' -ItemType 'file' -Value "puppeteer_skip_chromium_download=true $([Environment]::NewLine)PUPPETEER_CHROMIUM_REVISION=1.0.2"
 }
