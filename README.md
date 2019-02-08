@@ -14,11 +14,7 @@
 # Install Dev Tools
   1. Copy and execute this command in Powershell
 
-
         Scoop install git; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git
-<!-- 7. In PowerShell`git clone https://github.com/plovemk/Intouch.git` -->
-
-
 
 2. Create a .npmrc file in the root directory of Intouch and put the next two lines of code in there to set ENV variables.
 
