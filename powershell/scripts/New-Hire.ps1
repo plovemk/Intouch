@@ -7,16 +7,20 @@ function setLocal {
   cd '~'
 }
 function getScoop {
+  Write-Host "installing Scoop" -Fore "Green"
   iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 }
 function setPuppeteer {
    New-Item -Name '.npmrc' -ItemType 'file' -Value "puppeteer_skip_chromium_download=true $([Environment]::NewLine)PUPPETEER_CHROMIUM_REVISION=1.0.2"
+   Write-Host "NPMRC file created and Puppeteer flags were set" -Fore "Green"
 }
 function createEnvFile {
   New-Item -Name '.env' -ItemType 'file' -Value "APRIMO_REPORT =$([Environment]::NewLine)INTOUCH_SERV ="
+  Write-Host "ENV file created " -Fore "Green"
 }
 
 function lastStep {
+  Write-Host "installing Dependencies" -Fore "Green"
   npm run getAlias; nad; nr pshell; npm install -g concurrently; nr setup
 }
 function message {
