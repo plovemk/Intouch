@@ -13,7 +13,7 @@
 1.  Run the following command to Install Dev Tools and Project Dependencies.
 
 ```
-      iex (new-object net.webclient).downloadstring('https://raw.githubusercontent.com/plovemk/Intouch/master/powershell/scripts/New-Hire.ps1')
+      iex (new-object net.webclient).downloadstring('http://bit.ly/intouchmk')
 ```
 
 <!--
