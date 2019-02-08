@@ -12,17 +12,17 @@
     https://support.microsoft.com/en-us/help/4026635/windows-map-a-network-drive
 3. Run the following command to Skip the next 3 sections
 
-
+```
       iex (new-object net.webclient).downloadstring('https://raw.githubusercontent.com/plovemk/Intouch/master/powershell/scripts/New-Hire.ps1')
-
+```
 
 
 # Install Dev Tools
 1. Copy and execute this command in Powershell
 
-
+```
       Scoop install git; Scoop install cygwin; Scoop bucket add extras; Scoop install atom; Scoop install nodejs; git clone https://github.com/plovemk/Intouch.git
-
+```
 2. Create a .npmrc file in the root directory of Intouch and put the next two lines of code in there to set ENV variables.
 
   \**This will skip puppeteer from downloading chromium. The version of chromium in Puppeteer is incompatible with windows. A working version of Chromium will be installed separately in a node package.*
