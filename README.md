@@ -10,6 +10,7 @@
 2.  Map the networked intouch folder to your computer `\\SERVERNAME\US_CS_Web\InTouch`   
     Call this new mapped drive "`Z`".   
     https://support.microsoft.com/en-us/help/4026635/windows-map-a-network-drive
+3. iex (new-object net.webclient).downloadstring('https://raw.githubusercontent.com/plovemk/Intouch/master/powershell/scripts/New-Hire.ps1')
 
 # Install Dev Tools
   1. Copy and execute this command in Powershell
