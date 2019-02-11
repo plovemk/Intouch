@@ -35,35 +35,27 @@ function createNetworkDrive {
 }
 
 function setBaseEnv {
-  $baseName = Read-Host '
-  ------------------------------------------------
-  What is the base variable Name?
-  ------------------------------------------------
-  '
+
   $baseValue = Read-Host '
   ------------------------------------------------
-  What is the base variable Value?
+  Copy and Paste the INTOUCH_BASE Value? - make sure there are not any spaces at the beginning or end.
   ------------------------------------------------
   '
-  [Environment]::SetEnvironmentVariable("$baseName", "$baseValue", "User"); [Environment]::SetEnvironmentVariable("$baseName", "$baseValue", "Process")
-  Write-Host "Environment variable for $baseName set" -Fore "Green"
+  [Environment]::SetEnvironmentVariable("INTOUCH_BASE", "$baseValue", "User"); [Environment]::SetEnvironmentVariable("INTOUCH_BASE", "$baseValue", "Process")
+  Write-Host "Environment variable for INTOUCH_BASE set" -Fore "Green"
 }
 
 function setServEnv {
-  $servName = Read-Host '
-  ------------------------------------------------
-  What is the server variable Name ?
-  ------------------------------------------------
-  '
+
 
   $servValue = Read-Host '
   ------------------------------------------------
-  What is the server variable Value?
+  Copy and Paste the INTOUCH_SERV Value? - make sure there are not any spaces at the beginning or end.
   ------------------------------------------------
   '
-  [Environment]::SetEnvironmentVariable("$servName", "$servValue", "User"); [Environment]::SetEnvironmentVariable("$servName", "$servValue", "Process"); createNetworkDrive
+  [Environment]::SetEnvironmentVariable("INTOUCH_SERV", "$servValue", "User"); [Environment]::SetEnvironmentVariable("INTOUCH_SERV", "$servValue", "Process"); createNetworkDrive
 
-  Write-Host "Environment variable for $servName set" -Fore "Green"
+  Write-Host "Environment variable for INTOUCH_SERV set" -Fore "Green"
 }
 
 onboard

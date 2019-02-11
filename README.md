@@ -54,10 +54,16 @@
 
       `nr setup`  -->
 
-# [Set remaining Environment Variables](#env)
-1. Set up environment variables at the root of this project in a .env file - scroll down to bottom of the page.
-2. Set up environment variables in PowerShell - scroll down to bottom of the page.
-3. Everything is ready. Read below to see available functions.
+# Check Environment Variables
+ Run this command to check if variables were set correctly
+
+ Checking the values for *INTOUCH_SERV, INTOUCH_BASE*
+
+     Get-ChildItem Env:
+
+<!-- 1. Set up environment variables at the root of this project in a .env file - scroll down to bottom of the page. -->
+<!-- 2. Set up environment variables in PowerShell - scroll down to bottom of the page. -->
+<!-- ### Everything is ready. Read below to see available functions. -->
 
 
 ***
@@ -112,11 +118,6 @@ Run this script if errors are being thrown when running npm install
  `npm config set strict-ssl false`   
 
 
-#### eCard Image sizes
-1.  US-Preview.jpg:  490px wide (MONTH_YEAR_CARDNAMEHERE_PREVIEW)
-2.  Email.jpg:   298px wide (MONTH_YEAR_CARDNAMEHERE_EMAIL)
-3.  Thumb.jpg:   148px wide (MONTH_YEAR_CARDNAMEHERE_THUMB)
-
 ### Make your own aliases for function names.
 1. Don't change the files inside this project folder.
 2. The powershell scripts that do the heavy lifting are in this path ....
@@ -128,22 +129,3 @@ Run this script if errors are being thrown when running npm install
 
     `Set-Alias newName functionName`  
     example: `Set-Alias images makeImages`   
-
-### ENVIRONMENT VARIABLES FOR PowerShell<a name="env"></a>
-##### *This step is now handled in the install script*
-INTOUCH_SERV, INTOUCH_BASE, MAIL_SERV
-  1. Run this command with a variable from above as a string and the values given to you
-  2. You may have to run the command twice - once with User as the option and Process
-  > [Environment]::SetEnvironmentVariable("VAR_NAME", "value", "User")
-  > [Environment]::SetEnvironmentVariable("VAR_NAME", "value", "Process")
-
-  2. Run this command to check if variables were set correctly
-    > Get-ChildItem Env:
-
-### ENVIRONMENT variables for this App.
-  1. Create a .env file in the project root - *This step is now handled in the install script*
-  2.  Copy and paste the block of code into your .env file.
-  3. Values will be provided.
-
->  APRIMO_REPORT =  
->  INTOUCH_SERV =
