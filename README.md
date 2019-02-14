@@ -101,6 +101,12 @@ rw | rwp | reweb ---- *Email Draft in Outlook*
 ###### releaseEcards JobID
 rec | rj | relec | rtj ---- *Email Draft in Outlook*
 
+##### getJobStatus JobID
+jstat | stat | js ---- *No files generated*
+
+##### getDevReport "Name of dev to search" [string - *optional*]
+incoming | ij | jobs ---- *No files generated*
+
 ###### *The folders in ecards  will be created. The structure may be a little different to how you set things up.
 ###### *For missingLinks to work, the anchor tags will need a '#' in the href attribute. `<a href="#"></a>`
 

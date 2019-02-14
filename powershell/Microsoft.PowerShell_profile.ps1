@@ -7,6 +7,8 @@ Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\G
 Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\ConvertTo-PDF.ps1
 Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\Find-JobsPath.ps1
 Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\Get-ReleaseJob.ps1
+Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\Get-JobStatus.ps1
+Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\Get-DevReport.ps1
 # Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\New-Email.ps1
 # Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\Get-Notes.ps1
 # Import-Module -Name C:\Users\$env:Username\Documents\WindowsPowerShell\Scripts\ConvertTo-SinglePDF.ps1
@@ -156,7 +158,8 @@ function options {
     pdf
     releaseWebpage
     releaseEcards
-    makeText[not working]
+    getJobStatus
+    getDevReport
   " -Fore $Color[12]
   Write-Host "
     Type gh or help and Function name to get more info on how to use the funcion and see different names " -Fore $Color[1]

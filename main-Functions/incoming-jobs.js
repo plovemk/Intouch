@@ -1,27 +1,44 @@
-require("dotenv").config();
 const puppeteer = require("puppeteer");
 const eachSeries = require("async/eachSeries");
 const _ = require("lodash");
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
+require("dotenv").config({ path: `C:/Users/${os.userInfo().username}/Intouch/.env` });
 const convertCSV = require("./transformData.js");
 const pathCSV = `C:\\Users\\${os.userInfo().username}\\Downloads`;
 const reportPage = process.env.APRIMO_REPORT;
+const devName = process.argv[2];
 let mappedStatsArray = [];
 let tempPath;
 let birthdate;
 let fileObject;
 
-
-const devsArray = [
+const devs = [
   {winName: "Love", nameIn: "Love, Paul", nameOut: "Paul Love"},
   {winName: "Freelancer - McGee", nameIn: "McGee, Kayla", nameOut: "Kayla McGee"},
   {winName: "Freelancer - Nipper", nameIn: "Nipper, Riley" , nameOut: "Riley Nipper"}
 ];
-function runChromium() {
 
-  eachSeries(devsArray, async(dev) => {
+function searchFilter() {
+  var nameUpperCased ;
+  //if the search Param is all then it will execute runChromium and if not then execut loopDevs
+  nameUpperCased = _.upperFirst(devName);
+  ((devName == "all") || (devName == undefined) ) ? runChromium(devs) : loopDevs();
+  // devName == "all" ? runChromium(devs) : loopDevs();
+  //loopdevs will match search with a value in devs array. if there is a match then it will execute the runChromium function
+  function loopDevs() {
+    _.each(devs, (value, index) => {
+      var checkSearchValue = _.includes(value.nameOut, nameUpperCased);
+      // console.log(`checkSearchValue ${checkSearchValue} value name out ${value.nameOut}`);
+      checkSearchValue ? runChromium([devs[index]]) : null;
+    });
+  }
+}
+
+function runChromium(input) {
+
+  eachSeries(input, async(dev) => {
 
     const browser = await puppeteer.launch({
       executablePath: "chrome.exe",
@@ -85,8 +102,9 @@ function findLatestFile(mappedStatsArray, dev ){
   sortedArray = _.sortBy(mappedStatsArray, [function(o) { return o.date;}]);
   mostRecent = _.last(sortedArray);
   mostRecentString = JSON.stringify(mostRecent);
-  fs.writeFile("main-Functions\\data\\most-recent.json", mostRecentString,{ flag: "w+" }, (err) => {
+  fs.writeFile("Intouch\\main-Functions\\data\\most-recent.json", mostRecentString,{ flag: "w+" }, (err) => {
     if (err) throw err;
+    // C:\Users\lovep\Intouch\main-Functions\data\most-recent.json
     // console.log(`most recent ${JSON.stringify(mostRecent, null, 2)} \n most recent string ${mostRecentString}`);
     convertCSV.runAsyncFunc(mostRecent.name, dev);
     return mostRecent;
@@ -94,4 +112,5 @@ function findLatestFile(mappedStatsArray, dev ){
 }
 
 
-runChromium();
+// runChromium();
+searchFilter();

@@ -5,18 +5,28 @@ const argPath = process.argv[2];
 
 async function firstGrab(file) {
   var missLinks;
+  var missLink;
   const browser = await puppeteer.launch({
     executablePath: "chrome.exe"
   });
   const page = await browser.newPage();
   await page.goto("file:///" + file, {"waitUntil": "networkidle0"});
-  missLinks = await page.$$eval("[href=\"#\"]", e => e.map(a => "{\n" + "\"COMPONENT-COPY\": " + "\"" + a.parentNode.textContent + "\"," + "\n" + "\"LINK-COPY\": " + "\"" + a.text + "\"" + "\n}"));
-  await  findElement(missLinks);
+  // missLinks = await page.$$eval("[href=\"#\"]", e => e.map(a => "{\n" + "\"COMPONENT-COPY\": " + "\"" + a.parentNode.textContent + "\"," + "\n}"));
+  // missLink = await page.$$eval("[href=\"\"]", e => e.map(a => "{\n" + "\"COMPONENT-COPY\": " + "\"" + a.parentNode.textContent + "\"," + "\n}"));
+  missLinks = await page.$$eval("[href=\"#\"]", e => e.map(a =>  a.parentNode.textContent.replace(/\t/g,"") + ""));
+  missLink = await page.$$eval("[href=\"\"]", e => e.map(a =>  a.parentNode.textContent.replace(/\t/g,"") +  ""));
+
+  await  findElement(missLinks, missLink);
   await browser.close();
 }
+function findElement(missLinks, missLink) {
+  var links;
 
-function findElement(missLinks) {
-  fs.writeFile(argPath + "\\missing.json", missLinks,(err) => {
+  links = {
+    missLink,
+    missLinks
+  };
+  fs.writeFile(argPath + "\\missing.json", JSON.stringify(links, null, 2),(err) => {
     if (err) throw err;
     console.log("Links to pages and PDFs that are missing are in missing.json\" \n --------------------------- \n");
   });

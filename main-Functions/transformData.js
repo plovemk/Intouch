@@ -20,7 +20,7 @@ today = Date.parse(today);
 
 //need a function that takes newCsvPath reads the data and converts to csv files
 function copyData(newCsvPath, dev) {
-  var testfile = "main-Functions/data/temp-2019.csv";
+  var testfile = "Intouch/main-Functions/data/temp-2019.csv";
 
   fs.readFile(newCsvPath, (err,data) => {
     if (err) throw err;
@@ -51,7 +51,7 @@ function copyData(newCsvPath, dev) {
   }
   // convert csv file to json files
   function convertTexttoJson(source) {
-    var jPath = "main-functions/data/tempName.json";
+    var jPath = "Intouch/main-functions/data/tempName.json";
     var readStream = fs.createReadStream(source);
     var write = fs.createWriteStream(jPath);
     var toObject = csvjson.stream.toArray();
