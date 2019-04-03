@@ -93,7 +93,7 @@ function resizeImage(width, type, img, height) {
     .read(img)
     .then((image)  => {
       image.crop(0,0, image.bitmap.width, cropHeight);
-      return thumbCheck ? image.resize(width, 165 ) : image.resize(width, Jimp.AUTO );
+      return thumbCheck ? image.resize(width, Jimp.AUTO ) : image.resize(width, Jimp.AUTO );
     })
     .then(image => image.writeAsync(newFile))
     .catch(err => console.log(err));
