@@ -25,7 +25,7 @@ var runChromium = async function(PathWithName, ScreenGrabName) {
     });
     const page = await browser.newPage();
     await page.goto("file:///" + PathWithName, {"waitUntil" : "networkidle0"});
-  
+
     await page.setViewport({
       width: 600,
       height: 2000
@@ -33,7 +33,8 @@ var runChromium = async function(PathWithName, ScreenGrabName) {
     await page.screenshot({
       path: ScreenGrabName
     });
-    ImageHeight = await page.evaluate(() => document.getElementsByTagName("html")[0].offsetHeight);
+    // ImageHeight = await page.evaluate(() => document.getElementsByTagName("html")[0].offsetHeight);
+    ImageHeight = await page.evaluate(() =>  document.getElementsByTagName("table")[1].offsetHeight);
     mapSizeImg = {
       height: ImageHeight,
       name: ScreenGrabName,
@@ -84,7 +85,8 @@ function getAllFiles() {
 
 function resizeImage(width, type, img, height) {
   let newFile = img.replace(".jpg", type);
-  let cropHeight = height + 10;
+  // let cropHeight = height + 10;
+  let cropHeight = height;
   let evalName = img.includes("EN-US");
   let htmlDir = evalName ? englishDir : spanishDir;
   newFile = htmlDir + newFile;
