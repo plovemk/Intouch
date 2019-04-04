@@ -25,9 +25,10 @@ var runChromium = async function(PathWithName, ScreenGrabName) {
     });
     const page = await browser.newPage();
     await page.goto("file:///" + PathWithName, {"waitUntil" : "networkidle0"});
+  
     await page.setViewport({
       width: 600,
-      height: 1200
+      height: 2000
     });
     await page.screenshot({
       path: ScreenGrabName
