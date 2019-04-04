@@ -89,20 +89,12 @@ function newCard([String]$newCardPath) {
     1 = 'SPANISH'
   }
   $foldersArray = [Ordered]@{
-      0 = "NSD-ISD-blank"
-      1 = "ISD-ISD-blank"
-      2 = "ISD-IBC-blank"
-      3 = "IBC-CONSUMER-blank"
-      4 = "ISD-CONSUMER-blank"
-      5 = "NSD-blank"
-      6 = "ISD-blank"
-      7 = "NSD-ISD-msg"
-      8 = "ISD-ISD-msg"
-      9 = "ISD-IBC-msg"
-      10 = "IBC-CONSUMER-msg"
-      11 = "ISD-CONSUMER-msg"
-      12 = "NSD-msg"
-      13 = "ISD-msg"
+    0 = "NSD-blank"
+    1 = "NSD-ISD-msg"
+    2 = "ISD-IBC-blank"
+    3 = "ISD-IBC-msg"
+    4 = "IBC-CON-blank"
+    5 = "IBC-CON-msg"
   }
   foreach($word in $foldersArray.keys) {
 
