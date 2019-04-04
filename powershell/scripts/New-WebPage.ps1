@@ -94,7 +94,7 @@ $Color = @{
         ------------------------------------------------
         | Filename should have an EN-US in it         |
         ------------------------------------------------
-        " -Fore $Color[2]
+        " -ForegroundColor $Color[2]
    home
   }
 

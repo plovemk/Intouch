@@ -148,7 +148,7 @@ function options {
       13='DarkBlue'
     }
   Write-Host "
-  Here is a list of functions. " -Fore $Color[1]
+  Here is a list of functions. " -ForegroundColor $Color[1]
   Write-Host "
     makeImages
     missingLinks
@@ -160,13 +160,13 @@ function options {
     releaseEcards
     getJobStatus
     getDevReport
-  " -Fore $Color[12]
+  " -ForegroundColor $Color[12]
   Write-Host "
-    Type gh or help and Function name to get more info on how to use the funcion and see different names " -Fore $Color[1]
+    Type gh or help and Function name to get more info on how to use the funcion and see different names " -ForegroundColor $Color[1]
   Write-Host "
     'gh makeImages'
     'help makeImages'
-  " -Fore $Color[12]
+  " -ForegroundColor $Color[12]
 }
 
 Set-Alias -Name 'reload' -Value 'Restart-PowerShell'
