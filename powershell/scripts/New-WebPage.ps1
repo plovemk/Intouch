@@ -56,7 +56,7 @@ $Color = @{
 
     $projectName = Read-Host '
     ------------------------------------------------
-  T Type the name of the English HTML file WITHOUT the job number and file ext.  ----- test-project-EN-US --------
+  Type the name of the English HTML file WITHOUT the job number and file ext.  ----- test-project-EN-US --------
     ------------------------------------------------
     '
     # Ask for Author name, job number, pushlishDate and store in json object to put in the head meta tags
