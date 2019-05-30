@@ -44,8 +44,8 @@ function runChromium(input) {
       executablePath: "chrome.exe",
       headless: false,
       slowMo: 35,
-      args: ["--window-size=1920,1200"],
-      devtools: true
+      args: ["--window-size=1920,1200"]
+      // devtools: true
     });
     const page = await browser.newPage();
     await page.setViewport({
@@ -76,11 +76,19 @@ function runChromium(input) {
     await page.click("#Save");
     //   //this creates a promise to target page that is created aafter save is clicked
     const newPagePromise = new Promise(resolve => browser.on("targetcreated", target => resolve(target.page())));
+    /*
+    ---------------------THIS IS THE PART THAT DOWNLOADS INTO A SPREADSHEET - DON'T DELETE
+
     await page.waitFor("#ExportToolBarItem");
     await page.click("#ExportToolBarItem");
     const newPage = await newPagePromise;
     await newPage.waitFor("a");
     await newPage.click("a");
+    
+    ---------------------THIS IS THE PART THAT DOWNLOADS INTO A SPREADSHEET - DON'T DELETE
+    */
+
+
     // await setTimeout(() => {scanDownloads(dev);}, 3500);
     // await setTimeout(() => {browser.close();}, 1500);
 
