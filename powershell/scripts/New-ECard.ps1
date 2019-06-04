@@ -101,7 +101,7 @@ function newCard([String]$newCardPath) {
     if($menuIndex % 2 -eq 0) {
       Write-Host '             #',$menuIndex,'--------' , $foldersArray[$menuIndex]
     } else {
-      Write-Host '             #',$menuIndex, '--------', $foldersArray[$menuIndex] -ForegroundColorgroundColor $Color[8]
+      Write-Host '             #',$menuIndex, '--------', $foldersArray[$menuIndex] -ForegroundColor $Color[8]
     }
     $menuIndex += 1
 
@@ -121,7 +121,7 @@ function newCard([String]$newCardPath) {
     foreach($item in $folderSelect) {
       $toNumber = [int]$item
       mkdir $foldersArray[$toNumber]
-      Write-host $foldersArray[$toNumber] 'folder created.' -ForegroundColorgroundColor $Color[12]
+      Write-host $foldersArray[$toNumber] 'folder created.' -ForegroundColor $Color[12]
     }
   }
 
@@ -162,7 +162,7 @@ function newCard([String]$newCardPath) {
          $enHtml = makeFiles $version $jObj '-EN-US.html'
          $enTxt = makeFiles $version $jObj '-EN-US.txt'
          touch $enTxt,  $enHtml
-         Write-host  $enHtml 'and ' $enTxt ' files created' -ForegroundColorgroundColor $Color[12]
+         Write-host  $enHtml 'and ' $enTxt ' files created' -ForegroundColor $Color[12]
            if($enHtml.contains('NSD')){
                makeFileContent $import_NSD_en $enHtml
                 insertJobId $enHtml $jObj $version
@@ -177,7 +177,7 @@ function newCard([String]$newCardPath) {
            $spHtml = makeFiles $version $jObj '-ES-US.html'
            $spTxt = makeFiles $version $jObj '-ES-US.txt'
            touch $spTxt, $spHtml
-           Write-host  $spHtml 'and ' $spTxt ' files created' -ForegroundColorgroundColor $Color[12]
+           Write-host  $spHtml 'and ' $spTxt ' files created' -ForegroundColor $Color[12]
            if($spHtml.contains('NSD')){
                makeFileContent $import_NSD_es $spHtml
                insertJobId $spHtml $jObj $version
