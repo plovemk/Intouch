@@ -37,7 +37,7 @@
     "pdf-toolz": "github:plovemk/pdf-toolz",
     "pdf2json": "^1.1.7",
     "powershell": "^2.3.0",
-    "puppeteer": "^1.11.0",
+    "puppeteer": "^1.13.0",
     "puppeteer-core": "^1.11.0",
     "replace-in-file": "^3.4.2",
     "selenium-webdriver": "^4.0.0-alpha.1",
